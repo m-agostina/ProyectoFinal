@@ -1,0 +1,37 @@
+<body style="background-color: #eee;">
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Productos en el carrito</h1>
+    {{#if cart.products.length}}
+    <ol class="list-group list-group-numbered mt-4">
+      {{#each cart.products}}
+      <li class="list-group-item d-flex justify-content-between align-items-start">
+        <div class="ms-2 me-auto">
+          <p class="fw-bold">{{this.product.title}}</p>
+          <p>Descripción: {{this.product.description}}</p>
+          <p>Precio: ${{this.product.price}}</p>
+        </div>
+        <span class="badge text-bg-secondary rounded-pill">{{this.quantity}}</span>
+        <div>
+          <button class="btn btn-danger btn-sm"
+            onclick="deleteProduct('{{../cart._id}}', '{{this.product._id}}')">Eliminar una cantidad</button>
+          <button class="btn btn-danger btn-sm"
+            onclick="deleteAll('{{../cart._id}}', '{{this.product._id}}')">Eliminar todo</button>
+        </div>
+      </li>
+      {{/each}}
+    </ol>
+    <div class="text-center mt-4">
+   <button class="btn btn-custom" onclick="emptyCart('{{cart._id}}')" id="purchaseBtn">Vaciar carrito</button>
+   <button class="btn btn-secondary" onclick="purchaseCart('{{cart._id}}')" id="purchaseBtn">Finalizar compra</button>
+  </div>
+    {{else}}
+    <div class="alert alert-light mt-4 text-center" role="alert">
+      <p>No hay productos en el carrito</p>
+    </div>
+    {{/if}}
+    <div class="text-center mt-4">
+      <a href="/api/prod/render" class="btn btn-secondary">Tienda</a>
+    </div>
+  </div>
+</body>
+<script src="/js/cart.js"></script>

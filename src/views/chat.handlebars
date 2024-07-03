@@ -1,0 +1,28 @@
+<body style="background-color: #eee;">
+<div class="main-container py-5">
+    <nav class="bg-light rounded-3 p-3 mb-4 d-flex justify-content-end align-items-center nav-container">
+        <a href="/api/sessions/current" class="btn btn-secondary me-2">Perfil</a>
+        <a href="/api/prod/render" class="btn btn-secondary">Tienda</a>
+    </nav>
+    <div class="row">
+        <div class="col">
+            <div class="bg-light rounded-3 p-3 chat-container">
+                <h1>Chat</h1>
+                <div id="caja" class="caja"></div>
+                <form id="messageForm">
+                    <div class="mb-3">
+                        <input type="text" class="form-control" id="name" placeholder="Tu nombre.." aria-describedby="emailHelp">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="text" placeholder="Tu mensaje.."></textarea>
+                    </div>
+                    <input type="submit" value="Enviar" class="btn btn-dark">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

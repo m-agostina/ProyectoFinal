@@ -1,0 +1,25 @@
+<body style="background-color: #eee;">
+    <div class="container d-flex justify-content-center align-items-center vh-100">
+        <div class="card p-4" style="width: 30rem; font-size: 1rem">
+            <h1 class="text-center mb-4">LOG IN</h1>
+            <form action="/auth/login" method="POST">
+                <div class="form-floating mb-4">
+                    <input type="email" class="form-control form-control-lg" name="email"
+                        placeholder="name@example.com">
+                    <label for="">Correo electrónico</label>
+                </div>
+                <div class="form-floating mb-4">
+                    <input type="password" class="form-control form-control-lg" name="password" placeholder="Password">
+                    <label for="passwordInput">Contraseña</label>
+                </div>
+                <div class="d-grid">
+                    <button class="btn btn-custom btn-lg" type="submit">Ingresar</button>
+                    <br>
+                    <div>
+                        <a href="/api/sessions/register" class="btn btn-secondary">Volver al registro</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
